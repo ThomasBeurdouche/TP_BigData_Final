@@ -8,6 +8,7 @@ public class RecommendationMapper extends Mapper<LongWritable, Text, Text, Text>
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+        //User,relation nbr_relation
         String[] line = value.toString().split("\t");
         String[] users = line[0].split(",");
         int commonCount = Integer.parseInt(line[1]);

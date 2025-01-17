@@ -19,8 +19,8 @@ public class RecommendationReducer extends Reducer<Text, Text, Text, Text> {
 
         List<Map.Entry<String, Integer>> sortedCandidates = new ArrayList<>(candidateMap.entrySet());
         sortedCandidates.sort((e1, e2) -> {
-            int cmp = e2.getValue().compareTo(e1.getValue());
-            if (cmp != 0) return cmp;
+            int i = e2.getValue().compareTo(e1.getValue());
+            if (i != 0) return i;
             return e1.getKey().compareTo(e2.getKey());
         });
 
